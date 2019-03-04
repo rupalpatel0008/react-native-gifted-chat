@@ -166,6 +166,7 @@ export default class Bubble extends React.Component {
           ]}
         >
           <TouchableWithoutFeedback
+            onPress={() => this.props.onMessagePressed(this.props.currentMessage)}
             onLongPress={this.onLongPress}
             accessibilityTraits="text"
             {...this.props.touchableProps}
@@ -288,6 +289,7 @@ Bubble.defaultProps = {
   usernameStyle: {},
   containerToNextStyle: {},
   containerToPreviousStyle: {},
+  onMessagePressed: () => {},
 };
 
 Bubble.propTypes = {
@@ -329,4 +331,5 @@ Bubble.propTypes = {
     left: ViewPropTypes.style,
     right: ViewPropTypes.style,
   }),
+  onMessagePressed: PropTypes.func,
 };

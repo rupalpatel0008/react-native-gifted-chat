@@ -121,18 +121,9 @@ export default class MessageContainer extends React.PureComponent {
     };
 
     if (this.props.renderMessage) {
-      return (
-        <TouchableOpacity onPress={() => this.props.onMessagePressed(item)}>
-          {this.props.renderMessage(messageProps)}
-        </TouchableOpacity>
-      );
-      // return this.props.renderMessage(messageProps);
+      return this.props.renderMessage(messageProps);
     }
-    return (
-      <TouchableOpacity onPress={() => this.props.onMessagePressed(item)}>
-        <Message {...messageProps} />
-      </TouchableOpacity>
-    );
+    return <Message {...messageProps} />;
   };
 
   renderHeaderWrapper = () => <View style={styles.headerWrapper}>{this.renderLoadEarlier()}</View>;
@@ -241,7 +232,6 @@ MessageContainer.defaultProps = {
   scrollToBottom: false,
   scrollToBottomOffset: 200,
   alignTop: false,
-  onMessagePressed: () => {},
 };
 
 MessageContainer.propTypes = {
@@ -260,5 +250,4 @@ MessageContainer.propTypes = {
   scrollToBottomOffset: PropTypes.number,
   scrollToBottomComponent: PropTypes.func,
   alignTop: PropTypes.bool,
-  onMessagePressed: PropTypes.func,
 };

@@ -140,6 +140,7 @@ Message.defaultProps = {
   containerStyle: {},
   showUserAvatar: true,
   inverted: true,
+  onMessagePressed: () => {},
 };
 
 Message.propTypes = {
@@ -158,4 +159,5 @@ Message.propTypes = {
     left: ViewPropTypes.style,
     right: ViewPropTypes.style,
   }),
+  onMessagePressed: PropTypes.func,
 };
