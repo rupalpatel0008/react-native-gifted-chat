@@ -170,6 +170,7 @@ export default class Bubble extends React.Component {
             onLongPress={this.onLongPress}
             accessibilityTraits="text"
             {...this.props.touchableProps}
+style={{ backgroundColor: 'red' }}
           >
             <View>
               {this.renderCustomView()}
